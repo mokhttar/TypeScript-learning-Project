@@ -47,8 +47,34 @@ const properties: {
   isAvailable: boolean;
 }[] = [
   {
-    image: "",
-    title: "test Website",
+    image: "./assets/img1.jpeg",
+    title: "Algeria Store ",
+    price: 34,
+    location: {
+      firstLine: "no 23",
+      city: "setif",
+      code: 19000,
+      country: "Algeria",
+    },
+    contact: "mokttarbenhatta@gmail.com",
+    isAvailable: true,
+  },
+  {
+    image: "./assets/img2.jpeg",
+    title: "Canada Store",
+    price: 34,
+    location: {
+      firstLine: "no 23",
+      city: "setif",
+      code: 19000,
+      country: "Algeria",
+    },
+    contact: "mokttarbenhatta@gmail.com",
+    isAvailable: true,
+  },
+  {
+    image: "./assets/img3.jpeg",
+    title: "France Store",
     price: 34,
     location: {
       firstLine: "no 23",
@@ -80,9 +106,18 @@ function DisplayProprities(
     const Card = document.createElement("div");
     Card.classList.add("card");
     const image = document.createElement("img");
+    image.classList.add("card-img");
     image.src = element.image;
+    Card.appendChild(image);
+    const title = document.createElement("h3");
+    title.innerText = element.title;
+    Card.appendChild(title);
 
-    
+    if (cardContainer) {
+      cardContainer.appendChild(Card);
+    } else {
+      console.log("adding some bulshit");
+    }
   });
 }
 
